@@ -129,6 +129,13 @@ case $_ANDROID_TARGET_SELECT in
 	  ;;
 	arch-x86_64)
       ANDROID_TOOLS="x86_64-linux-android-gcc x86_64-linux-android-ranlib x86_64-linux-android-ld"
+	  ;;
+    arch-mips)
+      ANDROID_TOOLS="mipsel-linux-android-gcc mipsel-linux-android-ranlib mipsel-linux-android-ld"
+      ;;
+    arch-mips64)
+      ANDROID_TOOLS="mips64el-linux-android-gcc mips64el-linux-android-ranlib mips64el-linux-android-ld"
+      ;;
 	*)
 	  echo "ERROR ERROR ERROR"
 	  ;;
@@ -219,6 +226,18 @@ if [ "$_ANDROID_TARGET_SELECT" == "arch-x86_64" ]; then
 	export MACHINE=i686
 	export ARCH=x86_64
 	export CROSS_COMPILE="x86_64-linux-android-"
+fi
+
+if [ "$_ANDROID_TARGET_SELECT" == "arch-mips" ]; then
+	export MACHINE=i686
+	export ARCH=mips
+	export CROSS_COMPILE="mipsel-linux-android-"
+fi
+
+if [ "$_ANDROID_TARGET_SELECT" == "arch-mips64" ]; then
+	export MACHINE=i686
+	export ARCH=mips64
+	export CROSS_COMPILE="mips64el-linux-android-"
 fi
 
 echo "CHECK_CROSS_COMPILER = $CROSS_COMPILE"
