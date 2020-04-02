@@ -577,12 +577,6 @@ struct Wallet
     virtual uint64_t approximateBlockChainHeight() const = 0;
 
     /**
-    * @brief estimateBlockChainHeight - returns estimate blockchain height. More accurate than approximateBlockChainHeight,
-    *                                   uses daemon height and falls back to calculation from date/time
-    * @return
-    **/
-    virtual uint64_t estimateBlockChainHeight() const = 0;
-    /**
      * @brief daemonBlockChainHeight - returns daemon blockchain height
      * @return 0 - in case error communicating with the daemon.
      *             status() will return Status_Error and errorString() will return verbose error description
@@ -967,7 +961,6 @@ struct WalletManager
      * \param  password       Password of wallet file
      * \param  nettype        Network type
      * \param  kdf_rounds     Number of rounds for key derivation function
-     * \param  listener       Wallet listener to set to the wallet after creation
      * \return                Wallet instance (Wallet::status() needs to be called to check if opened successfully)
      */
     virtual Wallet * openWallet(const std::string &path, const std::string &password, NetworkType nettype, uint64_t kdf_rounds = 1) = 0;
@@ -1082,7 +1075,6 @@ struct WalletManager
      * \param  restoreHeight        restore from start height (0 sets to current height)
      * \param  subaddressLookahead  Size of subaddress lookahead (empty sets to some default low value)
      * \param  kdf_rounds           Number of rounds for key derivation function
-     * \param  listener             Wallet listener to set to the wallet after creation
      * \return                      Wallet instance (Wallet::status() needs to be called to check if recovered successfully)
      */
     virtual Wallet * createWalletFromDevice(const std::string &path,

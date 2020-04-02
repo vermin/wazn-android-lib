@@ -18,9 +18,9 @@ https://github.com/project-wazn/wazn-android-lib
 $ mkdir /opt/android
 $ chown $LOGNAME /opt/android
 $ cd /opt/android
-$ wget https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
-$ unzip android-ndk-r17c-linux-x86_64.zip
-$ mv android-ndk-r17c ndk-r17c
+$ wget https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip
+$ unzip android-ndk-r18b-linux-x86_64.zip
+$ mv android-ndk-r18b ndk-r18b
 ```
 
 ### Build WAZN
