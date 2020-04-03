@@ -5,8 +5,6 @@ WAZN Android Libraries
 
 ## Build instructions
 
-https://github.com/project-wazn/wazn-android-lib
-
 ### Prepare Ubuntu environment
 
 ```bash
