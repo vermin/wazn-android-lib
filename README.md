@@ -3,40 +3,38 @@ WAZN Android Libraries
 
 [![License](https://img.shields.io/badge/license-MIT-brightgreen)](https://opensource.org/licenses/MIT)
 
-## HOW TO BUILD
+## Build instructions
 
 https://github.com/project-wazn/wazn-android-lib
 
 ### Prepare Ubuntu environment
 
 ```bash
+sudo apt-get install build-essential cmake tofrodos libtool-bin
+sudo mkdir /opt/android
+sudo chown $LOGNAME /opt/android
 ```
 
 ### Install Android NDK
 
 ```bash
-$ mkdir /opt/android
-$ chown $LOGNAME /opt/android
-$ cd /opt/android
-$ wget https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip
-$ unzip android-ndk-r18b-linux-x86_64.zip
-$ mv android-ndk-r18b ndk-r18b
+cd /opt/android
+wget https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
+unzip android-ndk-r17c-linux-x86_64.zip
+mv android-ndk-r17c ndk-r17c
 ```
 
-### Build WAZN
+### Build boost, libsodium, openssl, WAZN & all libraries with one click!
 
 ```bash
-$ cd ~
-$ cd wazn-android-lib/external-libs
-$ mkdir -p build/src
-$ make all
+cd ~
+cd wazn-android-lib/external-libs
+mkdir -p build/src
+make all
 ```
 
-## Thanks
-
-Thanks to [xmrwallet](https://github.com/m2049r/xmrwallet) for the build script.
-
 ## License
+
 ```
 Licensed under the MIT
 Copyright (c) 2020 WAZN Project
