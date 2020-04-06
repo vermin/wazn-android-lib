@@ -36,6 +36,5 @@ make all
 ```
 Licensed under the MIT
 Copyright (c) 2020 WAZN Project
-Copyright (c) 2019 WooKey Wallet
 Copyright (c) 2017-2019 m2049
 ```
