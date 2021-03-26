@@ -1,6 +1,5 @@
-// Copyright (c) 2019 WAZN Project
-// Copyright (c) 2018 uPlexa Team
-// Copyright (c) 2014-2018 The Monero Project
+// Copyright (c) 2019-2021 WAZN Project
+// Copyright (c) 2014-2020, The Monero Project
 //
 // All rights reserved.
 //
@@ -481,7 +480,7 @@ struct Wallet
      * \param upper_transaction_size_limit
      * \param daemon_username
      * \param daemon_password
-     * \param lightWallet - start wallet in light mode, connect to a openmonero compatible server.
+     * \param lightWallet - start wallet in light mode, connect to a openwazn compatible server.
      * \return  - true on success
      */
     virtual bool init(const std::string &daemon_address, uint64_t upper_transaction_size_limit = 0, const std::string &daemon_username = "", const std::string &daemon_password = "", bool use_ssl = false, bool lightWallet = false) = 0;
@@ -576,6 +575,12 @@ struct Wallet
     */
     virtual uint64_t approximateBlockChainHeight() const = 0;
 
+    /**
+    * @brief estimateBlockChainHeight - returns estimate blockchain height. More accurate than approximateBlockChainHeight,
+    *                                   uses daemon height and falls back to calculation from date/time
+    * @return
+    **/
+    virtual uint64_t estimateBlockChainHeight() const = 0;
     /**
      * @brief daemonBlockChainHeight - returns daemon blockchain height
      * @return 0 - in case error communicating with the daemon.
@@ -791,7 +796,7 @@ struct Wallet
      */
     virtual void disposeTransaction(PendingTransaction * t) = 0;
 
-   /*!
+    /*!
     * \brief exportKeyImages - exports key images to file
     * \param filename
     * \return                  - true on success
@@ -1169,7 +1174,7 @@ struct WalletManager
     //! stops mining
     virtual bool stopMining() = 0;
 
-    //! resolves an OpenAlias address to a WAZN address
+    //! resolves an OpenAlias address to a wazn address
     virtual std::string resolveOpenAlias(const std::string &address, bool &dnssec_valid) const = 0;
 
     //! checks for an update and returns version, hash and url
@@ -1199,4 +1204,4 @@ struct WalletManagerFactory
 
 }
 
-namespace wazn = Wazn;
+namespace Bitwazn = Wazn;

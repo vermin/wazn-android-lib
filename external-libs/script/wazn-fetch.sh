@@ -7,7 +7,7 @@ source script/env.sh
 cd $EXTERNAL_LIBS_BUILD_ROOT
 
 url="https://github.com/vermin/wazn"
-version="wazniya-v1.1.0"
+version="wazniya-v1.2.9"
 
 if [ ! -d "wazn" ]; then
   git clone ${url} -b ${version}

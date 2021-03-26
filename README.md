@@ -8,21 +8,23 @@ WAZN Android Libraries
 ### Prepare Ubuntu environment
 
 ```bash
-sudo apt-get install build-essential cmake tofrodos libtool-bin
-sudo mkdir /opt/android
-sudo chown $LOGNAME /opt/android
+apt-get update && apt-get upgrade -y
+sudo apt-get install wget curl vim nano git screen zip -y
+sudo apt-get install build-essential cmake tofrodos libtool-bin -y
 ```
 
 ### Install Android NDK
 
 ```bash
+mkdir /opt/android
+chown $LOGNAME /opt/android
 cd /opt/android
 wget https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
 unzip android-ndk-r17c-linux-x86_64.zip
 mv android-ndk-r17c ndk-r17c
 ```
 
-### Build boost, libsodium, openssl, WAZN & all libraries with one click!
+### Build boost, libsodium, openssl, Wazn & all libraries with one click!
 
 ```bash
 cd ~
