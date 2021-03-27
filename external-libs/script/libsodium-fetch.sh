@@ -6,7 +6,7 @@ source script/env.sh
 
 cd $EXTERNAL_LIBS_BUILD_ROOT
 
-version=1.0.16
+version=1.0.18
 
 if [ ! -d "libsodium" ]; then
   git clone https://github.com/jedisct1/libsodium.git -b ${version}
